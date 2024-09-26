@@ -1,0 +1,25 @@
+.btn-primary {
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: var(--primary-color);
+    --bs-btn-border-color: var(--primary-color);
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: #260052dd;
+    --bs-btn-hover-border-color: #260052dd;
+    --bs-btn-active-bg: #260052dd;
+    --bs-btn-active-border-color: #260052dd;
+  }
+
+
+  .job-card{
+    background-color: #fcf4ffdd;
+    border-color: #e5d8eadd;
+    height: 250px;
+    width: 400px;
+  }
+
+  a {
+    width: 160px;
+    height: 40px;
+    border-radius: 3px;
+}

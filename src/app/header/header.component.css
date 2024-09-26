@@ -1,0 +1,44 @@
+button {
+     width: 120px;
+     height: 40px;
+     border-radius: 3px;
+}
+
+.btn-primary {
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: var(--primary-color);
+    --bs-btn-border-color: var(--primary-color);
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: #260052dd;
+    --bs-btn-hover-border-color: #260052dd;
+    --bs-btn-active-bg: #260052dd;
+    --bs-btn-active-border-color: #260052dd;
+  }
+
+  .btn-outline-primary{
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--primary-color);
+    --bs-btn-bg: var(--bs-white);
+    --bs-btn-border-color: var(--primary-color);
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg:  var(--primary-color);
+    --bs-btn-hover-border-color: var(--primary-color);
+    --bs-btn-active-bg: #260052dd;
+    --bs-btn-active-border-color: #260052dd;
+  }
+
+  .nav-item{
+  --bs-nav-link-hover-color: var(--primary-color);
+  font-size:20px;
+  font-weight:bold;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  
+  .navbar-brand{
+    font-size:23px;
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+

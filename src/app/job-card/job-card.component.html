@@ -1,0 +1,23 @@
+
+  <section> 
+    <div class="container">
+      <div class="row">
+    <div  *ngFor="let job of jobModelList"
+    class="col-md-4 mb-4">
+        <div class="job-card card h-100 w-100">
+          <div class="card-body">
+            <h2 class="card-title">{{job.title}}</h2>
+          <p class="card-text">Salary: {{job.salary}}</p>
+            <p class="card-text">{{job.company}}</p>
+            <p class="card-text">{{job.location}}</p>
+          <a href="#" class="btn btn-primary">Apply Now</a>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </section> 
+
+ 
+   

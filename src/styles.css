@@ -1,0 +1,24 @@
+
+
+:root {
+    --primary-color: #6300B3;
+    --bs-primary: #6300B3; 
+    --secondary-color: #faecffdd; /* Define a root variable for primary color */
+  }
+  
+  /* Use the root variable for primary color in your CSS */
+  .purple {
+    color: var(--primary-color) !important;
+  }
+
+  .btn-primary {
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: var(--primary-color);
+    --bs-btn-border-color: var(--primary-color);
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: #260052dd;
+    --bs-btn-hover-border-color: #260052dd;
+    --bs-btn-active-bg: #260052dd;
+    --bs-btn-active-border-color: #260052dd;
+  }
