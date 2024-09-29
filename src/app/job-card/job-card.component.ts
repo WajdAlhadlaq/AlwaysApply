@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { JobListComponent} from '../job-list/job-list.component';
 import {JobModel} from '../job-model';
 
 
@@ -8,7 +7,6 @@ import {JobModel} from '../job-model';
   selector: 'app-job-card',
   templateUrl: './job-card.component.html',
   styleUrl: './job-card.component.css',
-  standalone: false
 })
 export class JobCardComponent {
    jobModelList : JobModel [] =[

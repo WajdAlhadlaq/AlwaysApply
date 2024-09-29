@@ -22,3 +22,5 @@
     --bs-btn-active-bg: #260052dd;
     --bs-btn-active-border-color: #260052dd;
   }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

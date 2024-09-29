@@ -1,0 +1,22 @@
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+  }
+  
+  .mat-horizontal-stepper {
+    margin-top: 20px;
+  }
+  
+  .mat-step-header {
+    background-color: #f8f9fa; /* Light background for step header */
+  }
+  
+  .mat-step-header-active {
+    background-color: var; /* Active step color */
+    color: white; /* Text color for active step */
+  }
+  
+  .btn {
+    margin-right: 10px; /* Spacing between buttons */
+  }
+  
