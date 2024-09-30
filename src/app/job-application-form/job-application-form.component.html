@@ -1,56 +1,80 @@
 <div style="padding: 3em">
-
-<mat-horizontal-stepper>
-  <form [formGroup]="jobApplication" (ngSubmit)="onSubmit()">
-<mat-step state="account" label="Step 1">
-
-  <mat-label>Name</mat-label>
-  <input formControlName="isNotEmpty" formControlName="name"/>
-  <mat-error *ngIf="jobApplication.get('name')?.hasError('required')">
-    Name is Required
-  </mat-error>
-
-
-  <mat-label>Email</mat-label>
-  <input formControlName="isNotEmpty" formControlName="email"/>
-  <mat-error *ngIf="jobApplication.get('email')?.hasError('required')">
-    Name is Required
-  </mat-error>
-  <button matStepperNext>Next</button>
-
-  </mat-step>
-
-
-  <mat-step state="chat"  label="Step 2">
-    <mat-form-field>
-      <mat-label>Email</mat-label>
-  <input formControlName="isNotEmpty" formControlName="email"/>
-  <mat-error *ngIf="jobApplication.get('email')?.hasError('required')">
-    Name is Required
-  </mat-error>
-      </mat-form-field>
-      </mat-step>
+  <!-- Stepper: Set linear mode to true for validation between steps -->
+  <mat-horizontal-stepper [linear]="true">
     
+    <!-- Step 1: Personal Info -->
+    <mat-step [stepControl]="jobApplication.get('personalInfo')!" label="Personal Information">
+      <form [formGroup]="jobApplication.get('personalInfo')!">
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" placeholder="Enter your name" />
+          <mat-error *ngIf="jobApplication.get('personalInfo')?.get('name')?.hasError('required')">
+            Name is required
+          </mat-error>
+        </mat-form-field>
+        
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" placeholder="Enter your email" />
+          <mat-error *ngIf="jobApplication.get('personalInfo')?.get('email')?.hasError('required')">
+            Email is required
+          </mat-error>
+          <mat-error *ngIf="jobApplication.get('personalInfo')?.get('email')?.hasError('email')">
+            Please enter a valid email
+          </mat-error>
+        </mat-form-field>
 
+        <mat-form-field>
+          <mat-label>Phone</mat-label>
+          <input matInput formControlName="phone" placeholder="Enter your phone number" />
+          <mat-error *ngIf="jobApplication.get('personalInfo')?.get('phone')?.hasError('required')">
+            Phone number is required
+          </mat-error>
+        </mat-form-field>
 
-  <mat-step state="phone"  label="Step 3"> 
-    <input type="submit" value="submit">
-  </mat-step>
+        <div>
+          <button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
 
-</form>
-<ng-template matStepperIcon="phone">
-   <mat-icon>call_end</mat-icon>
-</ng-template>
+    <!-- Step 2: Experience -->
+    <mat-step [stepControl]="jobApplication.get('experience')!" label="Work Experience">
+      <form [formGroup]="jobApplication.get('experience')!">
+        <mat-form-field>
+          <mat-label>Years of Experience</mat-label>
+          <input matInput formControlName="yearsExperience" placeholder="Enter your experience in years" />
+          <mat-error *ngIf="jobApplication.get('experience')?.get('yearsExperience')?.hasError('required')">
+            Experience is required
+          </mat-error>
+        </mat-form-field>
 
-<ng-template matStepperIcon="chat">
-  <mat-icon>forum</mat-icon>
-</ng-template>
+        <mat-form-field>
+          <mat-label>Job Title</mat-label>
+          <input matInput formControlName="jobTitle" placeholder="Enter your job title" />
+          <mat-error *ngIf="jobApplication.get('experience')?.get('jobTitle')?.hasError('required')">
+            Job title is required
+          </mat-error>
+        </mat-form-field>
 
-<ng-template matStepperIcon="account">
-  <mat-icon >account_circle</mat-icon>
-</ng-template>
+        <div>
+          <button matStepperPrevious>Back</button>
+          <button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
 
-</mat-horizontal-stepper>
+    <!-- Step 3: Submit -->
+    <mat-step label="Submit">
+      <p>Review and Submit your application.</p>
+      <div>
+        <button matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="!jobApplication.valid">Submit</button>
+      </div>
+    </mat-step>
+
+  </mat-horizontal-stepper>
+
+  <!-- Output form values -->
+  <pre>{{ jobApplication.value | json }}</pre>
 </div>
-
-{{jobApplication.value  | json }}
