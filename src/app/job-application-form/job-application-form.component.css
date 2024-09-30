@@ -3,17 +3,15 @@
     margin: 50px auto;
   }
   
-  .mat-horizontal-stepper {
+  mat-horizontal-stepper {
     margin-top: 20px;
+    --mat-stepper-header-icon-foreground-color: #ffffff;
+    --mat-stepper-header-edit-state-icon-background-color:rgb(0, 225, 225)  !important;
+    --mat-stepper-header-icon-foreground-color: #ffffff;
   }
-  
-  .mat-step-header {
-    background-color: #f8f9fa; /* Light background for step header */
-  }
-  
-  .mat-step-header-active {
-    background-color: var; /* Active step color */
-    color: white; /* Text color for active step */
+ 
+  mat-icon {
+    font-family: 'Material Icons' !important;  
   }
   
   .btn {

@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import {RouterModule, Routes} from '@angular/router';
+import { MatIconModule } from '@angular/material/icon'
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,7 +25,7 @@ import { AboutComponent } from './about/about.component';
 
 const appRoutes: Routes = [
 {path: 'form', component: JobApplicationFormComponent},
-{path: '',redirectTo:'/job-card', pathMatch:'full'},
+{path: '',component: HomeComponent},
 
 ]
 
@@ -41,16 +44,24 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatStepperModule,
     MatInputModule,
     MatButtonModule,
+    MatIconModule,
     RouterModule.forRoot(appRoutes)
 
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    {
+      provide: STEPPER_GLOBAL_OPTIONS,
+      useValue: {
+       displayDefaultIndicatorType: false}
+    }
+ 
   ],
   bootstrap: [AppComponent]
 })

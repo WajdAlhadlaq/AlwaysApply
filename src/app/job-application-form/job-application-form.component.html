@@ -1,107 +1,56 @@
-<div class="container mt-5">
-    <h2 class="text-center mb-4">Job Application Form</h2>
-    <form [formGroup]="applicationForm" (ngSubmit)="onSubmit()">
-  
-      <!-- Personal Information Section -->
-      <h3>Personal Information</h3>
-      <div class="mb-3">
-        <label for="name" class="form-label">Full Name</label>
-        <input id="name" formControlName="name" class="form-control" />
-        <div *ngIf="applicationForm.get('personalInfo.name')?.invalid && applicationForm.get('personalInfo.name')?.touched" class="text-danger">
-          Name is required.
-        </div>
-      </div>
-      <div class="mb-3">
-        <label for="email" class="form-label">Email</label>
-        <input id="email" type="email" formControlName="email" class="form-control" />
-        <div *ngIf="applicationForm.get('personalInfo.email')?.invalid && applicationForm.get('personalInfo.email')?.touched" class="text-danger">
-          Valid email is required.
-        </div>
-      </div>
-      <div class="mb-3">
-        <label for="phone" class="form-label">Phone Number</label>
-        <input id="phone" formControlName="phone" class="form-control" />
-        <div *ngIf="applicationForm.get('personalInfo.phone')?.invalid && applicationForm.get('personalInfo.phone')?.touched" class="text-danger">
-          Phone number is required.
-        </div>
-      </div>
-      <div class="mb-3">
-        <label for="address" class="form-label">Address</label>
-        <input id="address" formControlName="address" class="form-control" />
-        <div *ngIf="applicationForm.get('personalInfo.address')?.invalid && applicationForm.get('personalInfo.address')?.touched" class="text-danger">
-          Address is required.
-        </div>
-      </div>
-  
-      <!-- Employment History Section -->
-      <h3>Employment History</h3>
-      <div formArrayName="employmentHistory">
-        <div *ngFor="let employment of employmentHistory.controls; let i = index" [formGroupName]="i" class="mb-3">
-          <h4>Job {{i + 1}}</h4>
-          <div class="mb-3">
-            <label for="company" class="form-label">Company</label>
-            <input id="company" formControlName="company" class="form-control" />
-          </div>
-          <div class="mb-3">
-            <label for="position" class="form-label">Position</label>
-            <input id="position" formControlName="position" class="form-control" />
-          </div>
-          <div class="mb-3">
-            <label for="startDate" class="form-label">Start Date</label>
-            <input id="startDate" type="date" formControlName="startDate" class="form-control" />
-          </div>
-          <div class="mb-3">
-            <label for="endDate" class="form-label">End Date</label>
-            <input id="endDate" type="date" formControlName="endDate" class="form-control" />
-          </div>
-          <div class="mb-3">
-            <label for="responsibilities" class="form-label">Responsibilities</label>
-            <textarea id="responsibilities" formControlName="responsibilities" class="form-control"></textarea>
-          </div>
-        </div>
-        <button type="button" class="btn btn-outline-primary" (click)="addEmploymentHistory()">Add Another Job</button>
-      </div>
-  
-      <!-- Education Section -->
-      <h3>Education</h3>
-      <div formArrayName="education">
-        <div *ngFor="let edu of education.controls; let i = index" [formGroupName]="i" class="mb-3">
-          <h4>Education {{i + 1}}</h4>
-          <div class="mb-3">
-            <label for="school" class="form-label">School</label>
-            <input id="school" formControlName="school" class="form-control" />
-          </div>
-          <div class="mb-3">
-            <label for="degree" class="form-label">Degree</label>
-            <input id="degree" formControlName="degree" class="form-control" />
-          </div>
-          <div class="mb-3">
-            <label for="graduationYear" class="form-label">Graduation Year</label>
-            <input id="graduationYear" formControlName="graduationYear" class="form-control" />
-          </div>
-        </div>
-        <button type="button" class="btn btn-outline-primary" (click)="addEducation()">Add Another Education</button>
-      </div>
-  
-      <!-- Resume Upload -->
-      <h3>Upload Resume</h3>
-      <div class="mb-3">
-        <label for="resume" class="form-label">Resume</label>
-        <input id="resume" type="file" (change)="onFileChange($event)" class="form-control" />
-        <div *ngIf="applicationForm.get('resume')?.invalid && applicationForm.get('resume')?.touched" class="text-danger">
-          Resume is required.
-        </div>
-      </div>
-  
-      <!-- Cover Letter -->
-      <h3>Cover Letter (Optional)</h3>
-      <div class="mb-3">
-        <label for="coverLetter" class="form-label">Cover Letter</label>
-        <textarea id="coverLetter" formControlName="coverLetter" class="form-control"></textarea>
-      </div>
-  
-      <!-- Submit Button -->
-      <button type="submit" class="btn btn-primary" [disabled]="applicationForm.invalid">Submit Application</button>
-    </form>
-  </div>
-  
+<div style="padding: 3em">
+
+<mat-horizontal-stepper>
+  <form [formGroup]="jobApplication" (ngSubmit)="onSubmit()">
+<mat-step state="account" label="Step 1">
+
+  <mat-label>Name</mat-label>
+  <input formControlName="isNotEmpty" formControlName="name"/>
+  <mat-error *ngIf="jobApplication.get('name')?.hasError('required')">
+    Name is Required
+  </mat-error>
+
+
+  <mat-label>Email</mat-label>
+  <input formControlName="isNotEmpty" formControlName="email"/>
+  <mat-error *ngIf="jobApplication.get('email')?.hasError('required')">
+    Name is Required
+  </mat-error>
+  <button matStepperNext>Next</button>
+
+  </mat-step>
+
+
+  <mat-step state="chat"  label="Step 2">
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+  <input formControlName="isNotEmpty" formControlName="email"/>
+  <mat-error *ngIf="jobApplication.get('email')?.hasError('required')">
+    Name is Required
+  </mat-error>
+      </mat-form-field>
+      </mat-step>
+    
+
+
+  <mat-step state="phone"  label="Step 3"> 
+    <input type="submit" value="submit">
+  </mat-step>
+
+</form>
+<ng-template matStepperIcon="phone">
+   <mat-icon>call_end</mat-icon>
+</ng-template>
+
+<ng-template matStepperIcon="chat">
+  <mat-icon>forum</mat-icon>
+</ng-template>
+
+<ng-template matStepperIcon="account">
+  <mat-icon >account_circle</mat-icon>
+</ng-template>
+
+</mat-horizontal-stepper>
+</div>
+
+{{jobApplication.value  | json }}
