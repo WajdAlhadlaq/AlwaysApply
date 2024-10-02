@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {JobModel} from '../job-model';
+import {JobModel} from '../models/job-model';
 
 
 @Component({

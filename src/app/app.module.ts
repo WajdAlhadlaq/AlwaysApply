@@ -9,6 +9,11 @@ import {RouterModule, Routes} from '@angular/router';
 import { MatIconModule } from '@angular/material/icon'
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
+import { MatRadioModule } from '@angular/material/radio'; 
+import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +26,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { JobApplicationFormComponent } from './job-application-form/job-application-form.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import { JobApplicationListComponent } from './job-application-list/job-application-list.component';
 
 
 const appRoutes: Routes = [
@@ -39,7 +46,9 @@ const appRoutes: Routes = [
     JobCardComponent,
     JobApplicationFormComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    JobApplicationListComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -51,15 +60,21 @@ const appRoutes: Routes = [
     MatInputModule,
     MatButtonModule,
     MatIconModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatOptionModule,
     RouterModule.forRoot(appRoutes)
 
   ],
   providers: [
+
+    provideHttpClient(withInterceptorsFromDi()),
     provideAnimationsAsync(),
     {
       provide: STEPPER_GLOBAL_OPTIONS,
       useValue: {
-       displayDefaultIndicatorType: false}
+       displayDefaultIndicatorType: false,
+    }
     }
  
   ],

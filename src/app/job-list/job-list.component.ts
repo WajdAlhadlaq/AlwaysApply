@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import {JobModel} from '../job-model'
+import {JobModel} from '../models/job-model'
 import { CommonModule } from '@angular/common';
 
 @Component({

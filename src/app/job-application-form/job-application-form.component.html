@@ -1,80 +1,155 @@
-<div style="padding: 3em">
-  <!-- Stepper: Set linear mode to true for validation between steps -->
+<div class="m-5" style="padding: 5em">
   <mat-horizontal-stepper [linear]="true">
     
     <!-- Step 1: Personal Info -->
-    <mat-step [stepControl]="jobApplication.get('personalInfo')!" label="Personal Information">
-      <form [formGroup]="jobApplication.get('personalInfo')!">
-        <mat-form-field>
+    <mat-step [stepControl]="personalInfo" label="Personal Information">
+      <form [formGroup]="personalInfo">
+        <mat-form-field appearance="outline">
           <mat-label>Name</mat-label>
           <input matInput formControlName="name" placeholder="Enter your name" />
-          <mat-error *ngIf="jobApplication.get('personalInfo')?.get('name')?.hasError('required')">
+          <mat-error *ngIf="personalInfo.get('name')?.hasError('required')">
             Name is required
           </mat-error>
         </mat-form-field>
-        
-        <mat-form-field>
+        <br>
+        <mat-form-field appearance="outline">
           <mat-label>Email</mat-label>
           <input matInput formControlName="email" placeholder="Enter your email" />
-          <mat-error *ngIf="jobApplication.get('personalInfo')?.get('email')?.hasError('required')">
+          <mat-error *ngIf="personalInfo.get('email')?.hasError('required')">
             Email is required
           </mat-error>
-          <mat-error *ngIf="jobApplication.get('personalInfo')?.get('email')?.hasError('email')">
+          <mat-error *ngIf="personalInfo.get('email')?.hasError('email')">
             Please enter a valid email
           </mat-error>
         </mat-form-field>
-
-        <mat-form-field>
+<br>
+        <mat-form-field appearance="outline">
           <mat-label>Phone</mat-label>
           <input matInput formControlName="phone" placeholder="Enter your phone number" />
-          <mat-error *ngIf="jobApplication.get('personalInfo')?.get('phone')?.hasError('required')">
+          <mat-error *ngIf="personalInfo.get('phone')?.hasError('required')">
             Phone number is required
           </mat-error>
         </mat-form-field>
 
         <div>
-          <button matStepperNext>Next</button>
+          <button mat-flat-button matStepperNext>Next</button>
         </div>
       </form>
     </mat-step>
 
-    <!-- Step 2: Experience -->
-    <mat-step [stepControl]="jobApplication.get('experience')!" label="Work Experience">
-      <form [formGroup]="jobApplication.get('experience')!">
-        <mat-form-field>
+    <!-- Step 2: Education -->
+    <mat-step [stepControl]="education" label="Education">
+      <form [formGroup]="education">
+        <mat-form-field appearance="outline">
+          <mat-label>Degree</mat-label>
+          <mat-select formControlName="degree">
+            <mat-option *ngFor="let degree of degrees" [value]="degree">
+              {{ degree }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="jobApplication.get('education.degree')?.hasError('required')">
+            Degree is required
+          </mat-error>
+        </mat-form-field>
+        <br>
+        
+        <mat-form-field appearance="outline">
+          <mat-label>Major</mat-label>
+          <mat-select formControlName="major">
+            <mat-option *ngFor="let major of majors" [value]="major">
+              {{ major }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="jobApplication.get('education.major')?.hasError('required')">
+            Major is required
+          </mat-error>
+        </mat-form-field>
+        <br>
+        
+        <mat-form-field appearance="outline">
+          <mat-label>University</mat-label>
+          <mat-select formControlName="university">
+            <mat-option *ngFor="let university of universities" [value]="university">
+              {{ university }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="jobApplication.get('education.university')?.hasError('required')">
+            University is required
+          </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="outline">
+          <mat-label>Graduation Year</mat-label>
+          <mat-select formControlName="graduationYear">
+            <mat-option *ngFor="let year of graduationYears" [value]="year">
+              {{ year }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="jobApplication.get('education.graduationYear')?.hasError('required')">
+            Graduation year is required
+          </mat-error>
+        </mat-form-field>
+        
+<br>
+
+             <!-- Radio Button Group for GPA -->
+             <mat-form-field appearance="outline">
+              <mat-label>GPA</mat-label>
+              <input matInput formControlName="gpa" placeholder="Enter your GPA" />
+              <mat-error *ngIf="education.get('gpa')?.hasError('required')">
+                GPA year is required
+              </mat-error>
+
+
+
+            </mat-form-field>
+            
+            <mat-radio-group formControlName="gpaScale" aria-label="Select GPA scale">
+              <mat-radio-button default value="4.0">Out of 4</mat-radio-button>
+              <mat-radio-button value="5.0">Out of 5</mat-radio-button>
+            </mat-radio-group>
+            <mat-error *ngIf="jobApplication.get('education.gpaScale')?.hasError('required')">
+              GPA scale is required
+            </mat-error>
+
+          
+
+        <div>
+          <button mat-flat-button matStepperPrevious>Back</button>
+          <button mat-flat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <!-- Step 3: Experience -->
+    <mat-step [stepControl]="experience" label="Work Experience">
+      <form [formGroup]="experience">
+        <mat-form-field appearance="outline">
           <mat-label>Years of Experience</mat-label>
           <input matInput formControlName="yearsExperience" placeholder="Enter your experience in years" />
-          <mat-error *ngIf="jobApplication.get('experience')?.get('yearsExperience')?.hasError('required')">
+          <mat-error *ngIf="experience.get('yearsExperience')?.hasError('required')">
             Experience is required
           </mat-error>
         </mat-form-field>
-
-        <mat-form-field>
+<br>
+        <mat-form-field appearance="outline">
           <mat-label>Job Title</mat-label>
           <input matInput formControlName="jobTitle" placeholder="Enter your job title" />
-          <mat-error *ngIf="jobApplication.get('experience')?.get('jobTitle')?.hasError('required')">
+          <mat-error *ngIf="experience.get('jobTitle')?.hasError('required')">
             Job title is required
           </mat-error>
         </mat-form-field>
 
         <div>
-          <button matStepperPrevious>Back</button>
-          <button matStepperNext>Next</button>
+          <button mat-flat-button matStepperPrevious>Back</button>
+          <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="!jobApplication.valid">Submit</button>
         </div>
       </form>
     </mat-step>
 
-    <!-- Step 3: Submit -->
-    <mat-step label="Submit">
-      <p>Review and Submit your application.</p>
-      <div>
-        <button matStepperPrevious>Back</button>
-        <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="!jobApplication.valid">Submit</button>
-      </div>
-    </mat-step>
+  
 
   </mat-horizontal-stepper>
 
-  <!-- Output form values -->
-  <pre>{{ jobApplication.value | json }}</pre>
+
 </div>
