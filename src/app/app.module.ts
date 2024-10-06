@@ -28,6 +28,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { JobApplicationListComponent } from './job-application-list/job-application-list.component';
+import { SubmissionSuccessComponent } from './submission-success/submission-success.component';
 
 
 const appRoutes: Routes = [
@@ -48,6 +49,7 @@ const appRoutes: Routes = [
     HomeComponent,
     AboutComponent,
     JobApplicationListComponent,
+    SubmissionSuccessComponent,
    
   ],
   imports: [

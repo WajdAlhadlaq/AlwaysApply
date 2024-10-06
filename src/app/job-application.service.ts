@@ -16,9 +16,12 @@ export class JobApplicationService {
     return this.http.post(this.apiUrl, formData);
   }
 
-  //GET
+ 
+//GET
   getJobApplications(): Observable<JobApplication[]> {
     return this.http.get<JobApplication[]>(this.apiUrl);
   }
   
 }
+
+  

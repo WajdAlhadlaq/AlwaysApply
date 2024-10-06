@@ -1,18 +1,6 @@
 {
   "applications": [
     {
-      "id": "1",
-      "name": "John Doe",
-      "email": "johndoe@example.com",
-      "phone": "123-456-7890",
-      "graduationYear": "2023",
-      "degree": "BSc",
-      "major": "Computer Science",
-      "university": "Example University",
-      "yearsExperience": 2,
-      "jobTitle": "Software Developer"
-    },
-    {
       "id": "907e",
       "personalInfo": {
         "name": "Wajd Alhadlaq",
@@ -90,6 +78,26 @@
       "experience": {
         "yearsExperience": "2",
         "jobTitle": "software"
+      }
+    },
+    {
+      "id": "f789",
+      "personalInfo": {
+        "name": "Wajd Alhadlaq",
+        "email": "wajdalhadlaq@gmail.com",
+        "phone": "88"
+      },
+      "education": {
+        "degree": "master",
+        "university": "KSU",
+        "major": "SWE",
+        "graduationYear": "2020",
+        "gpa": "4",
+        "gpaScale": "5.0"
+      },
+      "experience": {
+        "yearsExperience": "7",
+        "jobTitle": "f"
       }
     }
   ]

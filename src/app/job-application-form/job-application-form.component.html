@@ -142,7 +142,9 @@
 
         <div>
           <button mat-flat-button matStepperPrevious>Back</button>
-          <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="!jobApplication.valid">Submit</button>
+          <button mat-raised-button color="primary"  (click)="onSubmit()" [disabled]="!jobApplication.valid">Submit</button>
+          <a routerLink="/submission" > Submit </a>
+   
         </div>
       </form>
     </mat-step>

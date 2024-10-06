@@ -13,7 +13,7 @@ export class JobApplicationListComponent implements OnInit {
   constructor(private jobApplicationService: JobApplicationService) {}
 
   ngOnInit(): void {
-    this.fetchJobApplications();
+   this.fetchJobApplications();
   }
 
   fetchJobApplications(): void {

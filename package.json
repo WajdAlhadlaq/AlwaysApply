@@ -23,6 +23,7 @@
     "assets": "^3.0.1",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
+    "cors": "^2.8.5",
     "font-awesome": "^4.7.0",
     "material-icons": "^1.13.12",
     "ngx-bootstrap": "^18.0.2",
