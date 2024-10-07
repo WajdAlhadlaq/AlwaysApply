@@ -14,7 +14,7 @@
           <p class="card-text">Salary: {{job.salary}}</p>
             <p class="card-text">{{job.company}}</p>
             <p class="card-text">{{job.location}}</p>
-          <a routerLink="/job-application" class="btn btn-primary">Apply Now</a>
+          <a routerLink="/job-application" [queryParams]="{ title: job.title, company: job.company, salary: job.salary }" class="btn btn-primary">Apply Now</a>
   
         </div>
       </div>

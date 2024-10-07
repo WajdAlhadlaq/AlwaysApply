@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { JobApplicationService } from '../job-application.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-job-application-form',
@@ -8,27 +9,40 @@ import { JobApplicationService } from '../job-application.service';
   styleUrls: ['./job-application-form.component.css']
 })
 export class JobApplicationFormComponent implements OnInit {
+  jobTitle: string = '';
+  company: string = '';
+  salary: string = '';
 
+  graduationYears = ['2019', '2020', '2023', '2024'];
+  majors = ['SWE', 'CS', 'IS', 'IT', 'AI'];
+  degrees = ['bachelor', 'master', 'phd'];
+  universities = ['KSU', 'PNU', 'IMAMU'];
 
-  graduationYears = ['2019','2020','2023','2024'];
-majors = ['SWE', 'CS', 'IS', 'IT', 'AI'];
-
-degrees =['bachelor', 'master', 'phd'];
- 
-universities = ['KSU', 'PNU', 'IMAMU']; 
-
-
-
-  
   public jobApplication: FormGroup;
 
-  //private jobApplicationService: JobApplicationService )
-  constructor(private fb: FormBuilder, private jobApplicationService: JobApplicationService)  {
-    
-   }
+  constructor(
+    private fb: FormBuilder,
+    private jobApplicationService: JobApplicationService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.initForm();
+
+    this.route.queryParams.subscribe(params => {
+      this.jobTitle = params['title'] || 'No Title';
+      this.company = params['company'] || 'No Company';
+      this.salary = params['salary'] || 'No Salary';
+
+      // Update the form with the captured job details
+      this.jobApplication.patchValue({
+        jobDetails: {
+          jobTitle: this.jobTitle,
+          company: this.company,
+          salary: this.salary
+        }
+      });
+    });
   }
 
   private initForm(): void {
@@ -44,16 +58,20 @@ universities = ['KSU', 'PNU', 'IMAMU'];
         major: ['', Validators.required],
         graduationYear: ['', [Validators.required, Validators.pattern('^[0-9]{4}$')]],
         gpa: ['', Validators.required],
-        gpaScale:['4.0',Validators.required],
+        gpaScale: ['4.0', Validators.required],
       }),
       experience: this.fb.group({
         yearsExperience: ['', Validators.required],
         jobTitle: ['', Validators.required]
+      }),
+      jobDetails: this.fb.group({
+        jobTitle: [{ value: this.jobTitle, disabled: true }, Validators.required],
+        company: [{ value: this.company, disabled: true }, Validators.required],
+        salary: [{ value: this.salary, disabled: true }, Validators.required]
       })
     });
   }
 
-  
   get personalInfo() {
     return this.jobApplication.get('personalInfo') as FormGroup;
   }
@@ -65,23 +83,25 @@ universities = ['KSU', 'PNU', 'IMAMU'];
   get experience() {
     return this.jobApplication.get('experience') as FormGroup;
   }
-  
- 
-    onSubmit(): void {
-      if (this.jobApplication.valid) {
-        this.jobApplicationService.submitJobApplication(this.jobApplication.value)
-          .subscribe(
-            response => {
-              console.log('Form successfully submitted:', response);
-            },
-            error => {
-              console.error('Error submitting form:', error);
-            }
-          );
-      } else {
-        console.log('Form is invalid.');
-      }
+
+  onSubmit(): void {
+    if (this.jobApplication.valid) {
+      // Get the raw value, including disabled fields
+      const jobApplicationData = {
+        ...this.jobApplication.getRawValue(), // Get the full form data including disabled fields
+      };
+
+      this.jobApplicationService.submitJobApplication(jobApplicationData)
+        .subscribe(
+          response => {
+            console.log('Form successfully submitted:', response);
+          },
+          error => {
+            console.error('Error submitting form:', error);
+          }
+        );
+    } else {
+      console.log('Form is invalid.');
     }
-    
-  
+  }
 }

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { JobApplication } from './models/job-application'; 
+import { JobModel } from './models/job-model'; 
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,10 @@ export class JobApplicationService {
     return this.http.get<JobApplication[]>(this.apiUrl);
   }
   
+  //GET
+  // getJobCard(): Observable<JobModel[]> {
+  //   return this.http.get<JobModel[]>(this.apiUrl);
+  // }
 }
 
   

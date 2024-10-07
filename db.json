@@ -17,7 +17,9 @@
       },
       "experience": {
         "yearsExperience": "66",
-        "jobTitle": "fg"
+        "jobTitle": "fg",
+        "company": "Apple",
+        "salary": "33"
       }
     },
     {
@@ -37,7 +39,9 @@
       },
       "experience": {
         "yearsExperience": "66",
-        "jobTitle": "fg"
+        "jobTitle": "fg",
+        "company": "Apple",
+        "salary": "33"
       }
     },
     {
@@ -57,7 +61,9 @@
       },
       "experience": {
         "yearsExperience": "2",
-        "jobTitle": "software"
+        "jobTitle": "software",
+        "company": "Apple",
+        "salary": "33"
       }
     },
     {
@@ -77,7 +83,9 @@
       },
       "experience": {
         "yearsExperience": "2",
-        "jobTitle": "software"
+        "jobTitle": "software",
+        "company": "Apple",
+        "salary": "33"
       }
     },
     {
@@ -98,6 +106,51 @@
       "experience": {
         "yearsExperience": "7",
         "jobTitle": "f"
+      }
+    },
+    {
+      "id": "a5c6",
+      "personalInfo": {
+        "name": "Wajd Alhadlaq",
+        "email": "wajdalhadlaq@gmail.com",
+        "phone": "33"
+      },
+      "education": {
+        "degree": "master",
+        "university": "IMAMU",
+        "major": "AI",
+        "graduationYear": "2024",
+        "gpa": "3",
+        "gpaScale": "4.0"
+      },
+      "experience": {
+        "yearsExperience": "3",
+        "jobTitle": "f"
+      }
+    },
+    {
+      "id": "cb8e",
+      "personalInfo": {
+        "name": "wafaa",
+        "email": "wajdalhadlaq@gmail.com",
+        "phone": "211"
+      },
+      "education": {
+        "degree": "master",
+        "university": "IMAMU",
+        "major": "IT",
+        "graduationYear": "2020",
+        "gpa": "4",
+        "gpaScale": "4.0"
+      },
+      "experience": {
+        "yearsExperience": "1",
+        "jobTitle": "UI"
+      },
+      "jobDetails": {
+        "jobTitle": "UI/UX Specialist",
+        "company": "Google",
+        "salary": "$5000"
       }
     }
   ]

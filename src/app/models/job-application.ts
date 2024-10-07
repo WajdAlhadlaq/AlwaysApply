@@ -15,6 +15,13 @@ export interface JobApplication {
     experience: {
       yearsExperience: string;
       jobTitle: string;
+      company: string;
+      salary: string;
     };
+    jobDetails:{
+      jobTitle: string;
+      company: string;
+      salary: string;
+    }
   }
   

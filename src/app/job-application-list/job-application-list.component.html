@@ -3,7 +3,7 @@
  <div class="card">
    
   <ul>
-    <li *ngFor="let application of jobApplication">
+    <li *ngFor="let application of jobApplications">
       <strong>Name:</strong> {{ application.personalInfo.name }} <br />
       <strong>Email:</strong> {{ application.personalInfo.email }} <br />
       <strong>Phone:</strong> {{ application.personalInfo.phone }} <br />
@@ -13,21 +13,15 @@
       <strong>Graduation Year:</strong> {{ application.education.graduationYear }} <br />
       <strong>GPA:</strong> {{ application.education.gpa }} <br />
       <strong>Years of Experience:</strong> {{ application.experience.yearsExperience }} <br />
-      <strong>Job Title:</strong> {{ application.experience.jobTitle }} <br />
+      <strong>title:</strong> {{ application.jobDetails?.jobTitle }} <br />
+      <strong>company:</strong> {{ application.jobDetails?.company}} <br />
+      <strong>Salary:</strong> {{ application.jobDetails?.salary}} <br />
       <hr />
     </li>
   </ul>
 
 
-  <!-- <ul>
-    <li *ngFor="let application of jobModel">
-      <strong>id:</strong> {{ application.id }} <br />
-      <strong>title:</strong> {{ application.title }} <br />
-      <strong>company:</strong> {{ application.company}} <br />
-      <strong>Salary:</strong> {{ application.salary}} <br />
-      <hr />
-    </li>
-  </ul> -->
+
     <!-- <p *ngIf="jobApplications.length === 0">No job applications found.</p> -->
   </div>
   
