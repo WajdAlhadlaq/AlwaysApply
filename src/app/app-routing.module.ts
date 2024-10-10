@@ -5,8 +5,13 @@ import { JobApplicationFormComponent } from './job-application-form/job-applicat
 import { HomeComponent } from './home/home.component';
 import { JobApplicationListComponent } from './job-application-list/job-application-list.component';
 import { SubmissionSuccessComponent } from './submission-success/submission-success.component';
+import { AboutComponent } from './about/about.component';
+import { EditFormComponent } from './edit-form/edit-form.component';
+
 const routes: Routes = [// Home page showing job list
  
+  { path: 'edit', component: EditFormComponent},
+  { path: 'about', component: AboutComponent   },
   { path: 'submission', component: SubmissionSuccessComponent   },
   { path: 'job-list', component: JobApplicationListComponent },
   { path: 'job-application', component: JobApplicationFormComponent }, // Job application form

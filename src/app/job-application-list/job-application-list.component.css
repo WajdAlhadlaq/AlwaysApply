@@ -1,0 +1,34 @@
+.btn{
+    color: var(--primary-color);
+    font-weight: bold;
+
+}
+
+.delete{
+
+    color: brown;
+}
+
+/* Initially hide the "Hide Information" text */
+.hide-text {
+    display: none;
+  }
+  
+  /* When aria-expanded is true, show "Hide Information" and hide "Show Information" */
+  button[aria-expanded="true"] .show-text {
+    display: none;
+  }
+  
+  button[aria-expanded="true"] .hide-text {
+    display: inline;
+  }
+  
+  /* Show the "Show Information" text when collapsed */
+  button[aria-expanded="false"] .hide-text {
+    display: none;
+  }
+  
+  button[aria-expanded="false"] .show-text {
+    display: inline;
+  }
+  

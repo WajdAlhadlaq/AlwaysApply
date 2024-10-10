@@ -14,8 +14,7 @@ export class JobApplicationListComponent implements OnInit {
   constructor(private jobApplicationService: JobApplicationService) {}
 
   ngOnInit(): void {
-   this.fetchJobApplications();
- 
+   this.fetchJobApplications(); 
   }
 
   fetchJobApplications(): void {
@@ -27,6 +26,27 @@ export class JobApplicationListComponent implements OnInit {
         console.error('Error fetching applications:', error);
       }
     );
+  }
+
+  deleteApplication(id: number | undefined): void {
+    if (id === undefined) {
+      console.error('Error: Cannot delete application without a valid ID.');
+      return;
+    }
+  
+    if (confirm('Are you sure you want to delete this job application?')) {
+      this.jobApplicationService.deleteJobApplication(id)
+        .subscribe(
+          (response : any) => {
+            console.log('Job Application deleted successfully', response);
+            // Refresh the list after deletion
+            this.jobApplications = this.jobApplications.filter(app => app.id !== id);
+          },
+          (error : any) => {
+            console.error('Error deleting job application:', error);
+          }
+        );
+    }
   }
 
 

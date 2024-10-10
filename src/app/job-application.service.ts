@@ -22,11 +22,20 @@ export class JobApplicationService {
   getJobApplications(): Observable<JobApplication[]> {
     return this.http.get<JobApplication[]>(this.apiUrl);
   }
+
+  //DELETE
+ // Method to delete a specific job application by ID
+deleteJobApplication(id: number): Observable<any> {
+  return this.http.delete(`${this.apiUrl}/${id}`);
+}
+
+
+
+// Update job application
+updateJobApplication(id: number, jobApplication: any): Observable<any> {
+  return this.http.put(`${this.apiUrl}/${id}`, jobApplication);
+}
   
-  //GET
-  // getJobCard(): Observable<JobModel[]> {
-  //   return this.http.get<JobModel[]>(this.apiUrl);
-  // }
 }
 
   

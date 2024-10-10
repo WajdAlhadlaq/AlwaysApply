@@ -15,6 +15,7 @@ import { MatOptionModule } from '@angular/material/core';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -29,6 +30,7 @@ import { AboutComponent } from './about/about.component';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { JobApplicationListComponent } from './job-application-list/job-application-list.component';
 import { SubmissionSuccessComponent } from './submission-success/submission-success.component';
+import { EditFormComponent } from './edit-form/edit-form.component';
 
 
 const appRoutes: Routes = [
@@ -50,6 +52,7 @@ const appRoutes: Routes = [
     AboutComponent,
     JobApplicationListComponent,
     SubmissionSuccessComponent,
+  
    
   ],
   imports: [
