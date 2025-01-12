@@ -1,17 +1,10 @@
-import { Component, Input } from '@angular/core';
-import {JobModel} from '../models/job-model'
-import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-job-list',
   templateUrl: './job-list.component.html',
-  styleUrl: './job-list.component.css',
-  standalone: false
+  styleUrl: './job-list.component.css'
 })
 export class JobListComponent {
-  @Input() JobModel!:  JobModel;
 
 }
-
-
-

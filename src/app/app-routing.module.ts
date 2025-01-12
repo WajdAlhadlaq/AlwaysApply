@@ -10,7 +10,7 @@ import { EditFormComponent } from './edit-form/edit-form.component';
 
 const routes: Routes = [// Home page showing job list
  
-  { path: 'edit', component: EditFormComponent},
+  { path: 'edit/:id', component: EditFormComponent},
   { path: 'about', component: AboutComponent   },
   { path: 'submission', component: SubmissionSuccessComponent   },
   { path: 'job-list', component: JobApplicationListComponent },

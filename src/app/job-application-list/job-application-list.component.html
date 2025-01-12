@@ -1,57 +1,37 @@
 <div style="padding: 3em">
     <h2>Job Applications</h2>
  <div class="card">
-   
-  <!-- <ul>
-    <li *ngFor="let application of jobApplications">
-      <strong>Name:</strong> {{ application.personalInfo.name }} <br />
-      <strong>Email:</strong> {{ application.personalInfo.email }} <br />
-      <strong>Phone:</strong> {{ application.personalInfo.phone }} <br />
-      <strong>Degree:</strong> {{ application.education.degree }} <br />
-      <strong>University:</strong> {{ application.education.university }} <br />
-      <strong>Major:</strong> {{ application.education.major }} <br />
-      <strong>Graduation Year:</strong> {{ application.education.graduationYear }} <br />
-      <strong>GPA:</strong> {{ application.education.gpa }} <br />
-      <strong>Years of Experience:</strong> {{ application.experience.yearsExperience }} <br />
-      <strong>title:</strong> {{ application.jobDetails?.jobTitle }} <br />
-      <strong>company:</strong> {{ application.jobDetails?.company}} <br />
-      <strong>Salary:</strong> {{ application.jobDetails?.salary}} <br />
-      <hr />
-    </li>
-  </ul> -->
 
 
-
-  <div *ngFor="let application of jobApplications" class="card">
+  <div *ngFor="let job of jobs" class="card">
     <div class="card-body">
-      <h5 class="card-title">{{ application.jobDetails?.jobTitle}}</h5>
+      <!-- <h5 class="card-title">{{ application.jobDetails?.jobTitle}}</h5>
       <p class="card-text">{{ application.jobDetails?.company}}</p>
-      <p class="card-text">{{ application.jobDetails?.salary}}</p>
-      <div class="collapse" id="collapse">
+      <p class="card-text">{{ application.jobDetails?.salary}}</p> -->
+      <!-- <div class="collapse"> -->
         <div class="card card-body">
-          <strong>Name:</strong> {{ application.personalInfo.name }} <br />
-          <strong>Email:</strong> {{ application.personalInfo.email }} <br />
-          <strong>Phone:</strong> {{ application.personalInfo.phone }} <br />
-          <strong>Degree:</strong> {{ application.education.degree }} <br />
-          <strong>University:</strong> {{ application.education.university }} <br />
-          <strong>Major:</strong> {{ application.education.major }} <br />
-          <strong>Graduation Year:</strong> {{ application.education.graduationYear }} <br />
-          <strong>GPA:</strong> {{ application.education.gpa }} <br />
-          <strong>Years of Experience:</strong> {{ application.experience.yearsExperience }} <br />
+          <strong>Name:</strong> {{ job.name }} <br />
+          <strong>Email:</strong> {{ job.email }} <br />
+          <strong>Phone:</strong> {{ job.phone }} <br />
+          <strong>Degree:</strong> {{ job.degree }} <br />
+          <strong>University:</strong> {{ job.university }} <br />
+          <strong>Major:</strong> {{ job.major }} <br />
+          <strong>GPA:</strong> {{ job.gpa }} <br />
+          <strong>Graduation Year:</strong> {{ job.graduationYear }} <br />
+          <strong>Years of Experience:</strong> {{ job.experienceYears }} <br />
         </div>
       </div>
-      <button  class="btn delete" (click)="deleteApplication(application.id)"> Delete </button>
-      <button routerLink='/edit' class="btn edit"> Edit</button>
-      <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapse" aria-expanded="false" aria-controls="collapseExample">
+      <button  class="btn delete" (click)="deleteApplication(job.jobId)"> Delete </button>
+      <button [routerLink]="['/edit',job.jobId]" class="btn edit"> Edit</button>
+      <!-- <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapse" aria-expanded="false" aria-controls="collapseExample">
        <span class="show-text"> Show</span>
        <span class="hide-text"> Hide</span>
-      </button>
+      </button> -->
     </div>
   </div>
 
 
-    <p *ngIf="jobApplications.length === 0">No job applications found.</p>
+    <p *ngIf="jobs.length === 0">No job applications found.</p>
   </div>
-  
 
- 
+

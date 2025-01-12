@@ -9,7 +9,7 @@ import {RouterModule, Routes} from '@angular/router';
 import { MatIconModule } from '@angular/material/icon'
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
-import { MatRadioModule } from '@angular/material/radio'; 
+import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
@@ -21,7 +21,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { BannerComponent } from './banner/banner.component';
 import { FooterComponent } from './footer/footer.component';
-import { JobListComponent } from './job-list/job-list.component';
 import { JobCardComponent } from './job-card/job-card.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { JobApplicationFormComponent } from './job-application-form/job-application-form.component';
@@ -31,6 +30,8 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { JobApplicationListComponent } from './job-application-list/job-application-list.component';
 import { SubmissionSuccessComponent } from './submission-success/submission-success.component';
 import { EditFormComponent } from './edit-form/edit-form.component';
+import { JobListComponent } from './job-list/job-list.component';
+
 
 
 const appRoutes: Routes = [
@@ -45,15 +46,15 @@ const appRoutes: Routes = [
     HeaderComponent,
     BannerComponent,
     FooterComponent,
-    JobListComponent,
     JobCardComponent,
     JobApplicationFormComponent,
     HomeComponent,
     AboutComponent,
     JobApplicationListComponent,
     SubmissionSuccessComponent,
-  
-   
+    JobListComponent,
+
+
   ],
   imports: [
     BrowserModule,
@@ -68,7 +69,8 @@ const appRoutes: Routes = [
     MatRadioModule,
     MatSelectModule,
     MatOptionModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule
 
   ],
   providers: [
@@ -81,7 +83,7 @@ const appRoutes: Routes = [
        displayDefaultIndicatorType: false,
     }
     }
- 
+
   ],
   bootstrap: [AppComponent]
 })

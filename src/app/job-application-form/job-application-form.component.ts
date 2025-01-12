@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { JobApplicationService } from '../job-application.service';
 import { ActivatedRoute } from '@angular/router';
+import { JobClass } from '../job-class';
+import {v4 as uuidv4} from 'uuid';
 
 @Component({
   selector: 'app-job-application-form',
@@ -47,28 +49,16 @@ export class JobApplicationFormComponent implements OnInit {
 
   private initForm(): void {
     this.jobApplication = this.fb.group({
-      personalInfo: this.fb.group({
         name: ['', Validators.required],
         email: ['', [Validators.required, Validators.email]],
-        phone: ['', Validators.required]
-      }),
-      education: this.fb.group({
+        phone: ['', Validators.required],
         degree: ['', Validators.required],
         university: ['', Validators.required],
         major: ['', Validators.required],
         graduationYear: ['', [Validators.required, Validators.pattern('^[0-9]{4}$')]],
         gpa: ['', Validators.required],
-        gpaScale: ['4.0', Validators.required],
-      }),
-      experience: this.fb.group({
-        yearsExperience: ['', Validators.required],
+        experienceYears: ['', Validators.required],
         jobTitle: ['', Validators.required]
-      }),
-      jobDetails: this.fb.group({
-        jobTitle: [{ value: this.jobTitle, disabled: true }, Validators.required],
-        company: [{ value: this.company, disabled: true }, Validators.required],
-        salary: [{ value: this.salary, disabled: true }, Validators.required]
-      })
     });
   }
 
@@ -87,10 +77,8 @@ export class JobApplicationFormComponent implements OnInit {
   onSubmit(): void {
     if (this.jobApplication.valid) {
       // Get the raw value, including disabled fields
-      const jobApplicationData = {
-        ...this.jobApplication.getRawValue(), // Get the full form data including disabled fields
-      };
-
+      console.log(this.jobApplication.value)
+      const jobApplicationData = this.jobApplication.getRawValue();
       this.jobApplicationService.submitJobApplication(jobApplicationData)
         .subscribe(
           response => {

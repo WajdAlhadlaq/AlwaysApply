@@ -1,5 +1,5 @@
 export interface JobApplication {
-    id?: number; 
+    id?: number;
     personalInfo: {
       name: string;
       email: string;
@@ -9,11 +9,11 @@ export interface JobApplication {
       degree: string;
       university: string;
       major: string;
-      graduationYear: string;
+      graduation_year: string;
       gpa: string;
     };
     experience: {
-      yearsExperience: string;
+      years_experience: string;
       jobTitle: string;
       company: string;
       salary: string;
@@ -24,4 +24,3 @@ export interface JobApplication {
       salary: string;
     }
   }
-  
