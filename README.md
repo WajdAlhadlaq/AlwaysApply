@@ -50,12 +50,12 @@
 <p>The <strong>Job List Component</strong> is responsible for listing all available jobs.</p>
 <ul>
   <li>Renders multiple <code>Job Card</code> components.</li>
-  <li>Supports filtering and sorting options (e.g., by location or job type).</li>
+  <li>
 </ul>
 
 <!-- Job Application Form Component -->
 <h4>Job Application Form Component</h4>
-<p>The <strong>Job Application Form Component</strong> provides a form for users to submit job applications.</p>
+<p>The <strong>Job Application Form Component</strong> provides a form using Angular Reactive forms for users to submit job applications.</p>
 <ul>
   <li>Includes fields for user details (e.g., name, email, resume).</li>
   <li>Integrates validation to ensure form fields are filled correctly.</li>
@@ -66,7 +66,6 @@
 <h4>Job Application List Component</h4>
 <p>The <strong>Job Application List Component</strong> displays a list of all applications submitted by a user.</p>
 <ul>
-  <li>Shows application status (e.g., Submitted, In Review).</li>
   <li>Allows users to view and manage their previous applications.</li>
 </ul>
 
@@ -80,9 +79,9 @@
 
 <h3>Interface</h3>
 
-<!-- Job Application Interface -->
+<!-- Job Application Class -->
 <h4>Job Application Interface</h4>
-<p>The <strong>Job Application Interface</strong> defines the structure of a job application object.</p>
+<p>The <strong>Job Application Class<strong> defines the structure of a job application object.</p>
 <ul>
   <li><code>id</code>: Unique identifier for each application.</li>
   <li><code>jobId</code>: Reference to the job ID associated with this application.</li>
