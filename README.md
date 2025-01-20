@@ -69,6 +69,15 @@
   <li>Allows users to view and manage their previous applications.</li>
 </ul>
 
+<!-- Edit Job Application Component -->
+<h4> Edit Job Application Component</h4>
+<p>The <strong>Job Application Form Component</strong> provides a form using Angular Template-driven forms for users to update job applications.</p>
+<ul>
+   <li>Includes all fields of job application(e.g., name, email, university).</li>
+  <li>Integrates validation to ensure form fields are filled correctly.</li>
+  <li>Submits data to the backend</li>
+</ul>
+
 <!-- Submission Success Component -->
 <h4>Submission Success Component</h4>
 <p>The <strong>Submission Success Component</strong> displays a confirmation message after a job application is successfully submitted.</p>
@@ -80,7 +89,7 @@
 <h3>Interface</h3>
 
 <!-- Job Application Class -->
-<h4>Job Application Interface</h4>
+<h4>Job Application Class</h4>
 <p>The <strong>Job Application Class<strong> defines the structure of a job application object.</p>
 <ul>
   <li><code>id</code>: Unique identifier for each application.</li>
