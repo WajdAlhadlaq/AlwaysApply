@@ -35,6 +35,8 @@
 <ul>
   <li>Includes the <code>Banner</code> and <code>Job List</code> components.</li>
 </ul>
+![Home](https://github.com/user-attachments/assets/f898f62a-e02c-43b8-98d2-ef5eb4953084)
+
 
 <!-- Job Card Component -->
 <h4>Job Card Component</h4>
@@ -54,14 +56,14 @@
   <li>Integrates validation to ensure form fields are filled correctly.</li>
   <li>Submits data to the backend and routes to the <code>Submission Success</code> component on successful application.</li>
 </ul>
-
+![Job Application Form](https://github.com/user-attachments/assets/49d3f88f-fd0d-4f84-87a0-e31fd67dd153)
 <!-- Job Application List Component -->
 <h4>Job Application List Component</h4>
 <p>The <strong>Job Application List Component</strong> displays a list of all applications submitted by a user.</p>
 <ul>
   <li>Allows users to view and manage their previous applications.</li>
 </ul>
-
+![Job Applications List](https://github.com/user-attachments/assets/f5f2ddc0-5639-4322-a205-b83c2752f987)
 <!-- Edit Job Application Component -->
 <h4> Edit Job Application Component</h4>
 <p>The <strong>Job Application Form Component</strong> provides a form using Angular Template-driven forms for users to update job applications.</p>
@@ -70,7 +72,7 @@
   <li>Integrates validation to ensure form fields are filled correctly.</li>
   <li>Submits data to the backend</li>
 </ul>
-
+![Edit Job Application](https://github.com/user-attachments/assets/3d508f50-d897-4e8a-9cae-148e4beadaef)
 <!-- Submission Success Component -->
 <h4>Submission Success Component</h4>
 <p>The <strong>Submission Success Component</strong> displays a confirmation message after a job application is successfully submitted.</p>
