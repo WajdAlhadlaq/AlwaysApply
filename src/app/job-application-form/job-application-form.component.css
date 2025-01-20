@@ -1,20 +1,42 @@
+
+
+.next-padding{
+  margin-left: 380pt;
+}
+
+.submit-padding{
+  margin-left: 300pt;
+}
+
+
 .container {
     max-width: 800px;
     margin: 50px auto;
   }
-  
+
   mat-horizontal-stepper {
     margin-top: 20px;
     --mat-stepper-header-icon-foreground-color: #ffffff;
-    --mat-stepper-header-edit-state-icon-background-color:rgb(0, 225, 225)  !important;
+    --mat-stepper-header-edit-state-icon-background-color:rgb(161, 38, 141)  !important;
     --mat-stepper-header-icon-foreground-color: #ffffff;
   }
- 
+
+  ::ng-deep .mat-step-header .mat-step-icon-selected {
+    background-color:  var(--primary-color);
+ }
+
+ /* mat-flat-button {
+  background-color:  var(--primary-color);
+ } */
+
   mat-icon {
-    font-family: 'Material Icons' !important;  
+    font-family: 'Material Icons' !important;
   }
-  
+mat-flat-button.mat-purple{
+  background-color:var(--primary-color);
+}
+
   .btn {
-    margin-right: 10px; /* Spacing between buttons */
+    margin-right: 200px; /* Spacing between buttons */
+    background-color:var(--primary-color);
   }
-  

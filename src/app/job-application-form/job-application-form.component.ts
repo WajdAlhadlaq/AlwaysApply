@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { JobApplicationService } from '../job-application.service';
 import { ActivatedRoute } from '@angular/router';
 import { JobClass } from '../job-class';
-import {v4 as uuidv4} from 'uuid';
+
 
 @Component({
   selector: 'app-job-application-form',
@@ -21,6 +21,7 @@ export class JobApplicationFormComponent implements OnInit {
   universities = ['KSU', 'PNU', 'IMAMU'];
 
   public jobApplication: FormGroup;
+
 
   constructor(
     private fb: FormBuilder,
@@ -55,7 +56,7 @@ export class JobApplicationFormComponent implements OnInit {
         degree: ['', Validators.required],
         university: ['', Validators.required],
         major: ['', Validators.required],
-        graduationYear: ['', [Validators.required, Validators.pattern('^[0-9]{4}$')]],
+        graduationYear: ['', Validators.required],
         gpa: ['', Validators.required],
         experienceYears: ['', Validators.required],
         jobTitle: ['', Validators.required]

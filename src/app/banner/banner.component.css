@@ -1,9 +1,13 @@
 h1{
     font-size: 50px;
+    font-weight: bold;
 }
 
 p{
-    font-size: 18px; 
+    font-size: 24px;
+    font-weight: bolder;
+
+
 }
 
 /* .banner{

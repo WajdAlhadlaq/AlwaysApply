@@ -1,4 +1,4 @@
-<div class="m-5" style="padding: 5em">
+<div class="container max-w-screen-x mg-5" style="padding: 5em">
 
   <div class="job-details">
     <h3>Job Application Details</h3>
@@ -6,10 +6,10 @@
     <p><strong>Company:</strong> {{ company }}</p>
     <p><strong>Salary:</strong> {{ salary }}</p>
   </div>
-  <mat-horizontal-stepper [linear]="true">
+  <mat-horizontal-stepper class="center" #stepper [linear]="true">
 
     <!-- Step 1: Personal Info -->
-    <mat-step [stepControl]="personalInfo" label="Personal Information">
+    <mat-step  [stepControl]="personalInfo" label="Personal Information">
       <form [formGroup]="jobApplication">
         <mat-form-field appearance="outline">
           <mat-label>Name</mat-label>
@@ -17,6 +17,9 @@
           <mat-error *ngIf="jobApplication.get('name')?.hasError('required')">
             Name is required
           </mat-error>
+          <!-- <mat-error *ngIf="jobApplication.get('name')?.hasError('pattern')">
+            Please enter a valid name
+          </mat-error> -->
         </mat-form-field>
         <br>
         <mat-form-field appearance="outline">
@@ -36,16 +39,22 @@
           <mat-error *ngIf="jobApplication.get('phone')?.hasError('required')">
             Phone number is required
           </mat-error>
+          <!-- <mat-error *ngIf="jobApplication.get('phone')?.hasError('pattern')">
+            Enter a valid number
+          </mat-error> -->
         </mat-form-field>
 
-        <div>
-          <button mat-flat-button matStepperNext>Next</button>
+        <div class="next-padding">
+          <button   mat-flat-button color="purple" matStepperNext>Next</button>
         </div>
       </form>
     </mat-step>
 
     <!-- Step 2: Education -->
     <mat-step [stepControl]="education" label="Education">
+      <ng-template matStepperIcon="custom">
+        <mat-icon>book</mat-icon>
+   </ng-template>
       <form [formGroup]="jobApplication">
         <mat-form-field appearance="outline">
           <mat-label>Degree</mat-label>
@@ -97,7 +106,7 @@
           </mat-error>
         </mat-form-field>
 
-<br>
+            <br>
 
              <!-- Radio Button Group for GPA -->
              <mat-form-field appearance="outline">
@@ -121,9 +130,11 @@
 
 
 
-        <div>
+        <div class="hstack">
           <button mat-flat-button matStepperPrevious>Back</button>
+          <div class="submit-padding">
           <button mat-flat-button matStepperNext>Next</button>
+        </div>
         </div>
       </form>
     </mat-step>
@@ -131,6 +142,9 @@
     <!-- Step 3: Experience -->
     <mat-step [stepControl]="experience" label="Work Experience">
       <form [formGroup]="jobApplication">
+        <ng-template matStepperIcon="custom">
+          <mat-icon>person</mat-icon>
+     </ng-template>
         <mat-form-field appearance="outline">
           <mat-label>Years of Experience</mat-label>
           <input matInput formControlName="experienceYears" placeholder="Enter your experience in years" />
@@ -147,13 +161,38 @@
           </mat-error>
         </mat-form-field>
 
-        <div>
+        <div class="hstack">
+          <div>
           <button mat-flat-button matStepperPrevious>Back</button>
-          <button routerLink="/submission" mat-raised-button color="primary"  (click)="onSubmit()" [disabled]="!jobApplication.valid">Submit</button>
+        </div>
+          <div class="submit-padding">
+          <button  routerLink="/submission" mat-raised-button color="primary"  (click)="onSubmit()" [disabled]="!jobApplication.valid">Submit</button>
+        </div>
         </div>
       </form>
     </mat-step>
 
+
+    <ng-template matStepperIcon="edit">
+      <ng-container>
+        <mat-icon
+          *ngIf ="stepper.selectedIndex === 0">assignment_ind</mat-icon>
+
+          <mat-icon
+          *ngIf ="stepper.selectedIndex === 1">school</mat-icon>
+
+          <mat-icon
+          *ngIf ="stepper.selectedIndex === 2">work</mat-icon>
+
+
+
+
+      </ng-container>
+
+
+
+
+ </ng-template>
 
 
   </mat-horizontal-stepper>
