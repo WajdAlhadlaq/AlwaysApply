@@ -1,4 +1,4 @@
-<h2> Documentation </h2>
+  <h2> Documentation </h2>
 
 <h3>Components</h3>
 
@@ -87,13 +87,16 @@
 <h4>Job Application Class</h4>
 <p>The <strong>Job Application Class<strong> defines the structure of a job application object.</p>
 <ul>
-  <li><code>id</code>: Unique identifier for each application.</li>
-  <li><code>jobId</code>: Reference to the job ID associated with this application.</li>
-  <li><code>applicantName</code>: Name of the applicant.</li>
+  <li><code>jobId</code>:Unique identifier for each job application </li>
+  <li><code>name</code>: Name of the applicant.</li>
   <li><code>email</code>: Email address of the applicant.</li>
-  <li><code>resume</code>: Link or file containing the applicant's resume.</li>
-  <li><code>status</code>: Current status of the application (e.g., Submitted, In Review).</li>
-  <li><code>submissionDate</code>: Date the application was submitted.</li>
+  <li><code>phone</code>:Phone number of the applicant.</li>
+  <li><code>degree</code>:College degree of the applicant. </li>
+  <li><code>university</code>:University of the applicant.</li>
+  <li><code>major</code>:Major of the applicant.</li>
+  <li><code>graduationYear</code>:Graduation Year of the applicant.</li>
+  <li><code>gpa</code>:GPA of the applicant.</li>
+  <li><code>experienceYears</code>:Experience Years of the applicant.</li>
 </ul>
 
 
@@ -101,7 +104,11 @@
 <h4>Job Application Service</h4>
 <p>The <strong>Job Application Service<strong> defines the http calls to the backend</p>
 <ul>
-
+<li>POST function: submit job application to backend</li>
+<li>GET function: fetch job applications</li>
+<li>GET by Id function: To edit job application</li>
+  <li>DELETE function: To delete job application</li>
+  <li>UPDATE function: To update job application</li>
 </ul>
 
 
