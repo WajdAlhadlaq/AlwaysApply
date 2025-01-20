@@ -45,17 +45,10 @@
   <li>Used within the <code>Job List Component</code> to display multiple jobs.</li>
 </ul>
 
-<!-- Job List Component -->
-<h4>Job List Component</h4>
-<p>The <strong>Job List Component</strong> is responsible for listing all available jobs.</p>
-<ul>
-  <li>Renders multiple <code>Job Card</code> components.</li>
-  <li>Supports filtering and sorting options (e.g., by location or job type).</li>
-</ul>
 
 <!-- Job Application Form Component -->
 <h4>Job Application Form Component</h4>
-<p>The <strong>Job Application Form Component</strong> provides a form for users to submit job applications.</p>
+<p>The <strong>Job Application Form Component</strong> provides a form using Angular Reactive forms for users to submit job applications.</p>
 <ul>
   <li>Includes fields for user details (e.g., name, email, resume).</li>
   <li>Integrates validation to ensure form fields are filled correctly.</li>
@@ -66,8 +59,16 @@
 <h4>Job Application List Component</h4>
 <p>The <strong>Job Application List Component</strong> displays a list of all applications submitted by a user.</p>
 <ul>
-  <li>Shows application status (e.g., Submitted, In Review).</li>
   <li>Allows users to view and manage their previous applications.</li>
+</ul>
+
+<!-- Edit Job Application Component -->
+<h4> Edit Job Application Component</h4>
+<p>The <strong>Job Application Form Component</strong> provides a form using Angular Template-driven forms for users to update job applications.</p>
+<ul>
+   <li>Includes all fields of job application(e.g., name, email, university).</li>
+  <li>Integrates validation to ensure form fields are filled correctly.</li>
+  <li>Submits data to the backend</li>
 </ul>
 
 <!-- Submission Success Component -->
@@ -78,11 +79,11 @@
   <li>Includes a button to return to the job listings or view application status.</li>
 </ul>
 
-<h3>Interface</h3>
+<h3>Class</h3>
 
-<!-- Job Application Interface -->
-<h4>Job Application Interface</h4>
-<p>The <strong>Job Application Interface</strong> defines the structure of a job application object.</p>
+<!-- Job Application Class -->
+<h4>Job Application Class</h4>
+<p>The <strong>Job Application Class<strong> defines the structure of a job application object.</p>
 <ul>
   <li><code>id</code>: Unique identifier for each application.</li>
   <li><code>jobId</code>: Reference to the job ID associated with this application.</li>
@@ -92,6 +93,17 @@
   <li><code>status</code>: Current status of the application (e.g., Submitted, In Review).</li>
   <li><code>submissionDate</code>: Date the application was submitted.</li>
 </ul>
+
+
+<h3>Service</h3>
+<h4>Job Application Service</h4>
+<p>The <strong>Job Application Service<strong> defines the http calls to the backend</p>
+<ul>
+
+</ul>
+
+
+
 
 <h2>App Routing Documentation</h2>
 
