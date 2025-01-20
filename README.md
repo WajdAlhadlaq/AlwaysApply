@@ -45,13 +45,6 @@
   <li>Used within the <code>Job List Component</code> to display multiple jobs.</li>
 </ul>
 
-<!-- Job List Component -->
-<h4>Job List Component</h4>
-<p>The <strong>Job List Component</strong> is responsible for listing all available jobs.</p>
-<ul>
-  <li>Renders multiple <code>Job Card</code> components.</li>
-  <li>
-</ul>
 
 <!-- Job Application Form Component -->
 <h4>Job Application Form Component</h4>
@@ -86,7 +79,7 @@
   <li>Includes a button to return to the job listings or view application status.</li>
 </ul>
 
-<h3>Interface</h3>
+<h3>Class</h3>
 
 <!-- Job Application Class -->
 <h4>Job Application Class</h4>
@@ -100,6 +93,17 @@
   <li><code>status</code>: Current status of the application (e.g., Submitted, In Review).</li>
   <li><code>submissionDate</code>: Date the application was submitted.</li>
 </ul>
+
+
+<h3>Service</h3>
+<h4>Job Application Service</h4>
+<p>The <strong>Job Application Service<strong> defines the http calls to the backend</p>
+<ul>
+
+</ul>
+
+
+
 
 <h2>App Routing Documentation</h2>
 
